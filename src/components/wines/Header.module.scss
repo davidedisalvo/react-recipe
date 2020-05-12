@@ -1,0 +1,14 @@
+.jumbotron {
+  background: url("../../images/headerWines.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100vh - 174px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  h1,
+  h2 h3 {
+    text-align: center;
+  }
+}

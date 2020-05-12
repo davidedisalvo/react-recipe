@@ -1,0 +1,35 @@
+@import "../../variable";
+footer {
+  background: $orange;
+  padding: 50px 0;
+  position: relative;
+  z-index: 10;
+  .container {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: fit-content;
+      margin: 0 auto !important;
+      li {
+        list-style: none;
+        margin-right: 20px;
+        text-align: center;
+        &.icons {
+          cursor: pointer;
+          svg {
+            color: $red;
+          }
+          margin-right: 15px;
+        }
+
+        a {
+          color: $textColor;
+        }
+      }
+    }
+  }
+  .mt {
+    margin-top: 30px;
+  }
+}

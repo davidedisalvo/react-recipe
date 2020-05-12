@@ -1,0 +1,28 @@
+@import "../variable.scss";
+.image {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border-radius: 50px 0;
+  padding: 30px;
+  border: 20px solid $orange;
+  img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.ingredients {
+  background: $backgroundColor;
+  padding: 20px;
+  border-radius: 4px;
+  h4 {
+    text-align: left;
+  }
+
+  ul {
+    flex-wrap: wrap;
+  }
+}

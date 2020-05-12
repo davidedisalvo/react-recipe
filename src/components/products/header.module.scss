@@ -1,0 +1,33 @@
+.jumbotron {
+  background: url("../../images/headerProducts.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100vh - 174px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+
+  &:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.57);
+    z-index: 1;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: white !important;
+
+    text-align: center;
+  }
+
+  .customRow {
+    z-index: 2;
+  }
+}

@@ -1,0 +1,32 @@
+.nutrients {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+}
+.customButton {
+  margin-right: 20px;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+}
+.inputContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.textContainer {
+  margin-top: 20px;
+  h4 {
+    text-align: left;
+  }
+}
+
+.flex {
+  display: flex;
+  p {
+    margin-right: 10px;
+  }
+}

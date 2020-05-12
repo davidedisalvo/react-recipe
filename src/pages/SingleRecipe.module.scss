@@ -1,0 +1,86 @@
+@import "../variable";
+
+ul {
+  list-style: none;
+  display: flex;
+  margin: 0 !important;
+  li {
+    margin-right: 10px;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+.singleRecipe {
+  padding: 70px 0;
+  .ant-divider-horizontal {
+    margin: 44px 0 !important;
+  }
+  h4 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+.ingredientsContainer {
+  display: flex;
+  align-items: center;
+  h4 {
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
+
+.ctaCustom {
+  border: 1px solid $textColor;
+  padding: 10px;
+  border-radius: 3px;
+  color: $textColor;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: $textColor;
+    svg {
+      animation: bounce 1s ease-in-out infinite;
+    }
+  }
+
+  svg {
+    margin-left: 10px;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.ingredients {
+  display: flex;
+  flex-direction: column;
+}
+
+.imgContainer {
+  border: 15px solid $backgroundColor;
+  border-radius: 15px 0;
+}
+
+.summaryContainer {
+}
+
+.instructions {
+  span {
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,233 @@
+@import "../../variable";
+.cMenu {
+  position: fixed;
+  top: 20px;
+  left: 40px;
+  display: inline-block;
+  cursor: pointer;
+  pointer-events: auto;
+  margin-right: 20px;
+  z-index: 999;
+}
+
+.cMenu__line {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  transform: translate3d(-50%, -56%, 0);
+  z-index: 3;
+  width: 80px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.cMenu__line__wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  width: 45px;
+  height: 45px;
+  padding-top: 14%;
+  border-radius: 30%;
+  background: $backgroundColor;
+
+  &:hover {
+    span:first-child {
+      transform: translateY(-3px);
+      transition: all 0.3s ease-in;
+    }
+    span:last-child {
+      transform: translateY(3px);
+      transition: all 0.3s ease-in;
+    }
+  }
+}
+
+.cMenu__line__wrap span {
+  display: inline-block;
+  width: 50%;
+  left: 50%;
+  top: 40%;
+  transition: all 0.3s ease-in;
+
+  &:first-child {
+    height: 7px;
+    width: 30px;
+    margin-bottom: 4px;
+    border-radius: 5px 5px 1px 1px;
+    background: $textColor;
+  }
+  &:nth-of-type(2) {
+    height: 3px;
+    width: 30px;
+    border-radius: 2px;
+    margin-bottom: 4px;
+    background: $red;
+  }
+
+  &:last-child {
+    height: 6px;
+    width: 30px;
+    /* margin-bottom: 24px; */
+    border-radius: 1px 1px 5px 5px;
+    background: $textColor;
+  }
+}
+
+.cMenu__svg {
+  fill: green;
+  animation: rotating 10s linear infinite;
+  transition: fill 0.2s;
+}
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.openIcon {
+  span:nth-child(1) {
+    transform: translateX(-3px);
+    transition: all 0.3s ease-in;
+  }
+
+  span:nth-child(3) {
+    transform: translateX(3px);
+    transition: all 0.3s ease-in;
+  }
+}
+
+//overlay slide down animation
+.overlaySlidedown {
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: all 0.4s ease-in-out;
+  transition-delay: 0.8s;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: $backgroundColor;
+  z-index: 11;
+}
+.overlay nav {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  // height: 60%;
+  transform: translateY(-50%);
+}
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  //   display: inline-block;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+.overlay ul li {
+  display: block;
+  position: relative;
+  min-height: 54px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-position-x: 0;
+  margin-bottom: 50px;
+  transform: translateX(-1000px);
+  transition: transform 1s ease-in-out;
+  @for $i from 0 through 20 {
+    &:nth-child(#{$i + 1}) {
+      transition-delay: 0.05s * $i;
+    }
+  }
+}
+.overlay ul li a {
+  font-size: 54px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  display: block;
+  color: $textColor;
+  font-weight: bold;
+  position: relative;
+  &:hover {
+    color: white;
+    transition: color 0.6s;
+    transition-property: 0.9s;
+    &:after {
+      width: 110%;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+  &:after {
+    border-radius: 2px;
+    content: "";
+    position: absolute;
+    left: -5%;
+    top: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    background: $red;
+    transition: all 0.4s ease-in-out;
+    display: block;
+  }
+}
+
+.overlaySlidedown.open {
+  visibility: visible;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  li {
+    transition: transform 1s ease-in-out;
+    transform: translateX(0);
+    @for $i from 0 through 20 {
+      &:nth-child(#{$i + 1}) {
+        transition-delay: 0.05s * $i;
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.layer {
+  height: 30px;
+  position: absolute;
+  width: 400px;
+  background: black;
+  z-index: 107;
+  top: -20px;
+}
+.actv {
+  z-index: 99999;
+  transform: translateX(500px);
+  transition: all 0.3s;
+}
+.actv-2 {
+  width: 100%;
+  transition: all 0.3s;
+}

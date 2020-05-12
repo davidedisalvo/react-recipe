@@ -1,0 +1,28 @@
+@import "../../variable.scss";
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $backgroundColor;
+  padding: 15px;
+  margin-bottom: 40px;
+  h4 {
+    margin-bottom: 0;
+  }
+}
+.decription {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  img {
+    width: 80px;
+    border-radius: 4px;
+    margin-right: 20px;
+  }
+}
+.interact {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 20px;
+}

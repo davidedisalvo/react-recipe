@@ -1,0 +1,76 @@
+@import "../../variable";
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+
+  .image {
+    width: 100%;
+    border-radius: 5px;
+    max-width: 400px;
+    border: 10px solid $backgroundColor;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  h2 {
+    font-family: "Montserrat", sans-serif !important;
+    text-transform: uppercase;
+    font-size: 35px;
+    text-align: center;
+  }
+  h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+  .tags {
+    width: 100%;
+    span {
+      font-weight: bold;
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+  .customButton {
+    background: $red;
+    color: white;
+    margin-top: 30px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif !important;
+    border: none;
+
+    &:hover {
+      background: $textColor;
+      color: $red;
+    }
+  }
+}
+.carouselSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $backgroundColor;
+  .image {
+    border: 10px solid white;
+  }
+
+  &:nth-of-type(even) {
+    background: white;
+    .image {
+      border: 10px solid $backgroundColor;
+    }
+  }
+  //   &:last-of-type {
+  //     height: calc(100vh - 74px) !important;
+  //   }
+}
