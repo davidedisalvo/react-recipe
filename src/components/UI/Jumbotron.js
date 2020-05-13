@@ -4,8 +4,7 @@ import { Row, Col, Button } from "antd";
 import SimpleSearch from "./SimpleSearch";
 import axios from "axios";
 import { connect } from "react-redux";
-
-export const MyContext = createContext();
+import { Consumer } from "../../pages/Recipes";
 
 class Jumbotron extends Component {
   handleSearch = (value) => {
@@ -39,9 +38,10 @@ class Jumbotron extends Component {
             <h3>{this.props.copy}</h3>
           </Col>
           <Col span={24}>
-            <MyContext.Provider value={this.handleSearch}>
+            <Consumer>
+              {console.log(this.handleSearch)}
               {this.props.children}
-            </MyContext.Provider>
+            </Consumer>
           </Col>
         </Row>
       </section>
