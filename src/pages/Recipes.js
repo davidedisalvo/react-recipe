@@ -10,7 +10,14 @@ class Recipes extends Component {
   render() {
     return (
       <main>
-        <Jumbotron></Jumbotron>
+        <Jumbotron
+          title="SEARCH FOR RECIPES"
+          copy="Type your recipe in the form below"
+          img={require("../images/headerRecipes.jpg")}
+        >
+          {" "}
+          <SimpleSearch />
+        </Jumbotron>
         <SearchBy></SearchBy>
 
         <RecipeList></RecipeList>

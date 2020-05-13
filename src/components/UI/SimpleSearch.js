@@ -3,29 +3,30 @@ import { Input, Row, Col, Button } from "antd";
 import axios from "axios";
 import { connect } from "react-redux";
 import style from "./SimpleSearch.module.scss";
+import { MyContext } from "./Jumbotron";
 
 const { Search } = Input;
 
 class SimpleSearch extends Component {
-  handleSearch = (value) => {
-    console.log(value);
-    this.props.minimizeSearchBy(true);
+  // handleSearch = (value) => {
+  //   console.log(value);
+  //   this.props.minimizeSearchBy(true);
 
-    axios
-      .get(
-        `https://api.spoonacular.com/recipes/complexSearch?query=${value}&number=16&apiKey=e778dfe43af14044a6f9547ad722f708`
-      )
-      .then((el) => {
-        console.log(el.data.results);
-        const payload = el.data.results;
-        this.props.addRecipeListSearch(payload);
-        this.props.searchingRecipe(true);
-      })
-      .catch((err) => {
-        console.log(err);
-        this.props.errRecipeList(true);
-      });
-  };
+  //   axios
+  //     .get(
+  //       `https://api.spoonacular.com/recipes/complexSearch?query=${value}&number=16&apiKey=e778dfe43af14044a6f9547ad722f708`
+  //     )
+  //     .then((el) => {
+  //       console.log(el.data.results);
+  //       const payload = el.data.results;
+  //       this.props.addRecipeListSearch(payload);
+  //       this.props.searchingRecipe(true);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       this.props.errRecipeList(true);
+  //     });
+  // };
   render() {
     console.log(this.props);
 
