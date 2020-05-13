@@ -28,7 +28,7 @@ class SimpleSearch extends Component {
   //     });
   // };
   render() {
-    console.log(this.props);
+    console.log("new", this.props);
 
     return (
       <section>
@@ -37,7 +37,7 @@ class SimpleSearch extends Component {
             <Search
               className={style.simpleSearch}
               placeholder="input search text"
-              onSearch={this.handleSearch}
+              onSearch={this.props.onClick}
               enterButton
             />
           </Col>

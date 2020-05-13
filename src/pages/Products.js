@@ -2,20 +2,50 @@ import React, { Component } from "react";
 import Header from "../components/UI/Jumbotron";
 import SimpleSearch from "../components/UI/SimpleSearch";
 import ProductList from "../components/products/ProductList";
+import Jumbotron from "../components/UI/Jumbotron";
+import { connect } from "react-redux";
+import axios from "axios";
 
 class Products extends Component {
+  handleSearch = (value) => {
+    axios
+      .get(
+        `https://api.spoonacular.com/food/products/search?query=${value}&apiKey=e778dfe43af14044a6f9547ad722f708`
+      )
+      .then((el) => {
+        console.log(el);
+        const payload = el.data.products;
+        this.props.addProductsListSearch(payload);
+      });
+  };
   render() {
     return (
       <main>
-        <Header
+        {/* <Header
           title="SEARCH FOR PRODUCT"
           copy={"Type your product in the form below"}
           img={require("../images/headerProducts.jpg")}
-        ></Header>
+        ></Header> */}
+        <Jumbotron
+          title="SEARCH FOR PRODUCTS"
+          copy="Type your product in the form below"
+          img={require("../images/headerProducts.jpg")}
+          class="jumbotronProduct"
+        >
+          <SimpleSearch onClick={this.handleSearch} />
+        </Jumbotron>
         <ProductList></ProductList>
       </main>
     );
   }
 }
 
-export default Products;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addProductsListSearch: (data) => {
+      dispatch({ type: "ADD_PRODUCTS_LIST_SEARCH", data: data });
+    },
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Products);

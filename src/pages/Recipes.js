@@ -37,10 +37,9 @@ class Recipes extends Component {
           title="SEARCH FOR RECIPES"
           copy="Type your recipe in the form below"
           img={require("../images/headerRecipes.jpg")}
+          class="jumbotronRecipe"
         >
-          <Provider handleSearch={this.handleSearch}>
-            <SimpleSearch />
-          </Provider>
+          <SimpleSearch onClick={this.handleSearch} />
         </Jumbotron>
         <SearchBy></SearchBy>
 

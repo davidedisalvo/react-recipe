@@ -29,20 +29,15 @@ class Jumbotron extends Component {
   render() {
     return (
       <section
-        className={style.jumbotron}
+        className={`${style.jumbotron} ${this.props.class}`}
         style={{ backgroundImage: `url(${this.props.img})` }}
       >
-        <Row justify="center" align="middle">
+        <Row justify="center" align="middle" className={style.customRow}>
           <Col span={12}>
             <h1>{this.props.title}</h1>
             <h3>{this.props.copy}</h3>
           </Col>
-          <Col span={24}>
-            <Consumer>
-              {console.log(this.handleSearch)}
-              {this.props.children}
-            </Consumer>
-          </Col>
+          <Col span={24}>{this.props.children}</Col>
         </Row>
       </section>
     );
