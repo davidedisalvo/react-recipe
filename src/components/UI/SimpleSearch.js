@@ -8,25 +8,6 @@ import { MyContext } from "./Jumbotron";
 const { Search } = Input;
 
 class SimpleSearch extends Component {
-  // handleSearch = (value) => {
-  //   console.log(value);
-  //   this.props.minimizeSearchBy(true);
-
-  //   axios
-  //     .get(
-  //       `https://api.spoonacular.com/recipes/complexSearch?query=${value}&number=16&apiKey=e778dfe43af14044a6f9547ad722f708`
-  //     )
-  //     .then((el) => {
-  //       console.log(el.data.results);
-  //       const payload = el.data.results;
-  //       this.props.addRecipeListSearch(payload);
-  //       this.props.searchingRecipe(true);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       this.props.errRecipeList(true);
-  //     });
-  // };
   render() {
     console.log("new", this.props);
 
@@ -41,17 +22,6 @@ class SimpleSearch extends Component {
               enterButton
             />
           </Col>
-        </Row>
-        <Row
-          justify="center"
-          className={style.searchBy}
-          style={{ marginTop: "30px" }}
-        >
-          {this.props.minimize ? (
-            <Button onClick={() => this.props.minimizeSearchBy(false)}>
-              Or Search By
-            </Button>
-          ) : null}
         </Row>
       </section>
     );

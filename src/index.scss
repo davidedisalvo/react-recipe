@@ -11,6 +11,9 @@ body {
   a {
     font-family: "Josefin Sans", sans-serif;
   }
+  @media (max-width: 400px) {
+    font-size: 14px;
+  }
 }
 
 code {

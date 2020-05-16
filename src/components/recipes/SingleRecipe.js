@@ -62,7 +62,13 @@ class SingleRecipe extends Component {
           <div style={{ margin: "25px 0" }}>
             <h4 className="title">{this.props.infos.title}</h4>
           </div>
-          <Button onClick={this.handleSingleRecipe}>Go to the recipe</Button>
+          <Button
+            onClick={this.handleSingleRecipe}
+            className="ctaCustom"
+            style={{ padding: "7px" }}
+          >
+            Go to the recipe
+          </Button>
         </article>
       </Col>
     );

@@ -91,14 +91,19 @@ class TheCarousel extends Component {
                       </Col>
                     </Row>
                     <Row>
-                      <div className={style.summary}>
+                      <div className={`${style.summary} trunc`}>
                         {ReactHtmlParser(el.summary)}
                       </div>
                     </Row>
                     <Button
                       shape="round"
                       size="large"
-                      className={style.customButton}
+                      className="customCta"
+                      style={{
+                        marginTop: "20px",
+                        width: "180px",
+                        justifyContent: "center",
+                      }}
                       onClick={() => this.handleSubmit(el)}
                     >
                       Know more

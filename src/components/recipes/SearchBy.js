@@ -20,12 +20,12 @@ class SearchBy extends Component {
     if (this.props.minimize === false) {
       return (
         <section className={style.search}>
-          <Row>
+          {/* <Row>
             <h2 style={{ textAlign: "center" }}>OR SEARCH BY</h2>
-          </Row>
+          </Row> */}
           <Row>
             <Tabs defaultActiveKey="1" type="card" onChange={callback}>
-              <TabPane tab="Ingrdients" key="1">
+              <TabPane tab="Ingredients" key="1">
                 <h3>INGREDIENTS</h3>
 
                 <SearchByIngridients

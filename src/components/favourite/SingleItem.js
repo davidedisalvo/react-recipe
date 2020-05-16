@@ -75,6 +75,12 @@ class SingleItem extends Component {
     if (this.props.tag === "recipe") {
       this.props.removeRecipeFromFav(this.props.index);
     }
+    if (this.props.tag === "wine") {
+      this.props.removeWineFromFav(this.props.index);
+    }
+    if (this.props.tag === "product") {
+      this.props.removeProductFromFav(this.props.index);
+    }
   };
   render() {
     console.log(this.props.index);
@@ -114,6 +120,12 @@ const mapDispatchToProps = (dispatch) => {
     },
     removeRecipeFromFav: (data) => {
       dispatch({ type: "REMOVE_RECIPE_FROM_FAV", data: data });
+    },
+    removeWineFromFav: (data) => {
+      dispatch({ type: "REMOVE_WINE_FROM_FAV", data: data });
+    },
+    removeProductFromFav: (data) => {
+      dispatch({ type: "REMOVE_PRODUCT_FROM_FAV", data: data });
     },
   };
 };

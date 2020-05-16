@@ -1,10 +1,16 @@
+@import "../../variable";
 .nutrients {
   display: flex !important;
   flex-direction: column;
   align-items: center;
 }
 .customButton {
-  margin-right: 20px;
+  border-color: $textColor !important;
+
+  &:first-of-type {
+    margin-left: 0px;
+    margin-right: 5px;
+  }
 }
 
 .buttonsContainer {
@@ -15,6 +21,19 @@
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
+  @media (max-width: 400px) {
+    flex-wrap: wrap;
+  }
+  input {
+    width: 50%;
+
+    @media (max-width: 400px) {
+      border: 1px solid $textColor;
+
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
 }
 
 .textContainer {

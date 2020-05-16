@@ -4,6 +4,16 @@ import SimpleSearch from "../components/UI/SimpleSearch";
 import ProductList from "../components/products/ProductList";
 import Jumbotron from "../components/UI/Jumbotron";
 import { connect } from "react-redux";
+
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
+
 import axios from "axios";
 
 class Products extends Component {
@@ -16,16 +26,15 @@ class Products extends Component {
         console.log(el);
         const payload = el.data.products;
         this.props.addProductsListSearch(payload);
+        this.props.searchingProduct(true);
+
+        scroll.scrollTo(600);
       });
+    // .then(scroll.scrollTo(600));
   };
   render() {
     return (
       <main>
-        {/* <Header
-          title="SEARCH FOR PRODUCT"
-          copy={"Type your product in the form below"}
-          img={require("../images/headerProducts.jpg")}
-        ></Header> */}
         <Jumbotron
           title="SEARCH FOR PRODUCTS"
           copy="Type your product in the form below"
@@ -44,6 +53,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addProductsListSearch: (data) => {
       dispatch({ type: "ADD_PRODUCTS_LIST_SEARCH", data: data });
+    },
+    searchingProduct: (data) => {
+      dispatch({ type: "SEARCHING_PRODUCT", data: data });
     },
   };
 };

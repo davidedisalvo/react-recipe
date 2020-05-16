@@ -3,25 +3,48 @@
 main {
   // margin-top: 50px;
 }
+
 h1 {
   font-size: 42px;
+  @media (max-width: 400px) {
+    font-size: 33px;
+  }
   font-weight: bold;
   text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Catamaran", sans-serif;
   text-align: center;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: black;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 h2 {
   font-size: 35px;
-  font-family: "Montserrat", sans-serif;
+  @media (max-width: 400px) {
+    font-size: 24px;
+  }
+  font-family: "Catamaran", sans-serif;
 }
 h3 {
   font-size: 30px;
-  font-family: "Montserrat", sans-serif;
+  @media (max-width: 400px) {
+    font-size: 21px;
+  }
+  font-family: "Catamaran", sans-serif;
 }
 
 h4 {
   font-size: 24px;
+  @media (max-width: 400px) {
+    font-size: 18px;
+  }
 }
 section {
   &:not(:first-of-type) {
@@ -164,4 +187,150 @@ ul {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.trunc {
+  display: block;
+  display: -webkit-box;
+  max-width: 100%;
+  height: 69px;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 1;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ant-tabs-tab {
+  background-color: $backgroundColor !important;
+}
+
+.ant-tabs-tab-active.ant-tabs-tab {
+  background-color: white !important;
+  color: $textColor !important;
+  font-size: 19px !important;
+}
+.ant-tabs-nav .ant-tabs-tab {
+  &:not(:last-child) {
+    @media (max-width: 400px) {
+      margin-right: 15px !important;
+    }
+  }
+}
+
+.ant-tabs.ant-tabs-tab-active {
+  color: red !important;
+}
+
+.ant-btn.customCta {
+  color: white;
+  font-weight: bold;
+  padding: 14px;
+  font-family: "Catamaran";
+  font-size: 18px;
+  background: #ffc107;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px 0;
+  height: unset;
+  box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.55);
+  &:hover {
+    border-color: transparent;
+    background: #eab000;
+    color: white;
+  }
+}
+
+.ant-btn.ctaCustom {
+  border: 1px solid #1f1300;
+  padding: 14px;
+  border-radius: 6px 0;
+  color: #1f1300;
+  background: $backgroundColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.55);
+  height: unset;
+  &:hover {
+    border-color: $red !important;
+    color: $red !important;
+  }
+}
+.fullHeight {
+  height: calc(100vh - 173px) !important;
+}
+
+.heartCta {
+  overflow: hidden;
+  position: relative;
+  letter-spacing: 2.6px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -26px;
+    background-image: url(/static/media/heart.5425e5fc.png);
+    width: 16px;
+    background-position: center;
+    background-size: cover;
+    height: 16px;
+    z-index: 999;
+    left: 59.5%;
+    height: 30px;
+    transition: all 0.4s ease-in-out;
+  }
+  .elementOut {
+    transition: all 0.4s ease-in-out;
+  }
+  &:hover {
+    color: $textColor !important;
+    background: linear-gradient(to right, #ffde7a 0%, #ffeb5c 100%) !important;
+    &:after {
+      transition: all 0.4s ease-in-out;
+      bottom: 12px;
+    }
+    .elementOut {
+      transition: all 0.4s ease-in-out;
+
+      transform: translateY(-40px);
+    }
+  }
+
+  &:focus {
+    color: $red !important;
+    border-color: $red !important;
+
+    &:after {
+      left: 60%;
+      visibility: hidden;
+    }
+    .elementOut {
+      transition: all 0.4s ease-in-out;
+      transition-delay: 0.6s;
+
+      transform: translateY(0px);
+    }
+  }
+}
+
+@keyframes bigger {
+  0% {
+  }
+
+  50% {
+    transform: scale(2);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    visibility: hidden;
+  }
 }

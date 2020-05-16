@@ -1,10 +1,18 @@
 import React, { Component } from "react";
-import SimpleSearch from "../components/wines/SimpleSearch";
+import SimpleSearch from "../components/UI/SimpleSearch";
 import RecipeWithWine from "../components/wines/RecipesWithWine";
 import Jumbotron from "../components/UI/Jumbotron";
 import { connect } from "react-redux";
 import axios from "axios";
 import Header from "../components/wines/Header";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 class Wines extends Component {
   handleSearch = (value) => {
@@ -16,6 +24,7 @@ class Wines extends Component {
         console.log("wine", el);
         const payload = { title: value, data: el.data };
         this.props.addWineListSearch(payload);
+        scroll.scrollTo(600);
       })
       .catch((err) => {
         console.log(err);

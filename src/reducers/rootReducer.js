@@ -8,6 +8,8 @@ const initState = {
   favourite: { recipes: [], wines: [], products: [] },
   error: false,
   searchingRecipe: false,
+  searchingProduct: false,
+
   searchingWine: false,
 };
 const rootReducer = (state = initState, action) => {
@@ -128,6 +130,40 @@ const rootReducer = (state = initState, action) => {
     };
   }
 
+  if (action.type === "REMOVE_WINE_FROM_FAV") {
+    console.log("working there");
+    console.log(action.data);
+
+    let favourite = state.favourite;
+    const cloneWines = [...favourite.wines];
+    cloneWines.splice(action.data, 1);
+
+    return {
+      ...state,
+      favourite: {
+        ...state.favourite,
+        wines: cloneWines,
+      },
+    };
+  }
+
+  if (action.type === "REMOVE_PRODUCT_FROM_FAV") {
+    console.log("working there");
+    console.log(action.data);
+
+    let favourite = state.favourite;
+    const cloneProducts = [...favourite.products];
+    cloneProducts.splice(action.data, 1);
+
+    return {
+      ...state,
+      favourite: {
+        ...state.favourite,
+        products: cloneProducts,
+      },
+    };
+  }
+
   if (action.type === "MINIMIZE_SEARCH_BY") {
     return {
       ...state,
@@ -145,6 +181,12 @@ const rootReducer = (state = initState, action) => {
     return {
       ...state,
       searchingRecipe: action.data,
+    };
+  }
+  if (action.type === "SEARCHING_PRODUCT") {
+    return {
+      ...state,
+      searchingProduct: action.data,
     };
   }
   if (action.type === "SEARCHING_WINE") {

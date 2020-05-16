@@ -6,7 +6,7 @@ class Favourite extends Component {
   render() {
     console.log("test", this.props.favourite);
     return (
-      <main>
+      <main className="fullHeight">
         <TheTabs></TheTabs>
       </main>
     );

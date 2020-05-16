@@ -3,6 +3,14 @@ import { Row, Col, Button, List, InputNumber, Divider, Tabs } from "antd";
 import style from "./SearchByIngredients.module.scss";
 import { connect } from "react-redux";
 import axios from "axios";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 const { TabPane } = Tabs;
 function callback(key) {
   console.log(key);
@@ -60,6 +68,7 @@ class SearchByIngredients extends Component {
         const payload = data.data;
         this.props.addRecipeListSearch(payload);
         this.props.searchingRecipe(payload);
+        scroll.scrollMore(200);
       });
   };
   minFat = (el) => {
@@ -83,6 +92,7 @@ class SearchByIngredients extends Component {
         const payload = data.data;
         this.props.addRecipeListSearch(payload);
         this.props.searchingRecipe(payload);
+        scroll.scrollMore(200);
       });
   };
   minSugar = (el) => {
@@ -106,6 +116,7 @@ class SearchByIngredients extends Component {
         const payload = data.data;
         this.props.addRecipeListSearch(payload);
         this.props.searchingRecipe(payload);
+        scroll.scrollMore(200);
       });
   };
   render() {
@@ -134,7 +145,8 @@ class SearchByIngredients extends Component {
               ></input>
             </div>
             <Button
-              className={style.submit}
+              className="ctaCustom"
+              style={{ marginTop: "60px" }}
               onClick={this.handleSubmitCholesterol}
             >
               Submit
@@ -163,7 +175,11 @@ class SearchByIngredients extends Component {
                 max="100"
               ></input>
             </div>
-            <Button onClick={this.handleSubmitFat} className={style.submit}>
+            <Button
+              onClick={this.handleSubmitFat}
+              className="ctaCustom"
+              style={{ marginTop: "60px" }}
+            >
               Submit
             </Button>
           </div>
@@ -190,7 +206,11 @@ class SearchByIngredients extends Component {
                 max="100"
               ></input>
             </div>
-            <Button onClick={this.handleSubmitSugar} className={style.submit}>
+            <Button
+              onClick={this.handleSubmitSugar}
+              className="ctaCustom"
+              style={{ marginTop: "60px" }}
+            >
               Submit
             </Button>
           </div>

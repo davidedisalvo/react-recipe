@@ -1,7 +1,7 @@
 import React from "react";
 import SingleProduct from "./SingleProduct";
 import { connect } from "react-redux";
-import { Row } from "antd";
+import { Row, Col } from "antd";
 import style from "./ProductList.module.scss";
 
 function ProductList(props) {
@@ -16,7 +16,19 @@ function ProductList(props) {
       </section>
     );
   } else {
-    return null;
+    if (props.searchingProduct) {
+      return (
+        <Row justify="center">
+          <Col span={20}>
+            <h4 style={{ textAlign: "center" }} className="errorBar">
+              Sorry we can find your product. Try again.
+            </h4>
+          </Col>
+        </Row>
+      );
+    } else {
+      return null;
+    }
   }
 }
 
@@ -24,6 +36,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     products: state.products,
     own: ownProps,
+    searchingProduct: state.searchingProduct,
   };
 };
 

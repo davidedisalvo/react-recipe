@@ -18,7 +18,7 @@ class TheTabs extends Component {
         {this.props.favourite.recipes.length === 0 &&
         this.props.favourite.wines.length === 0 &&
         this.props.favourite.products.length === 0 ? (
-          <Row justify="center">
+          <Row justify="center" className="fullHeight">
             <Col>
               <h4>you don t have any favourite item yet</h4>
             </Col>
@@ -30,34 +30,40 @@ class TheTabs extends Component {
                 <TabPane tab="RECIPES" key="1">
                   {this.props.favourite.recipes
                     ? this.props.favourite.recipes.map((el, index) => (
-                        <SingleItem
-                          tag={"recipe"}
-                          infos={el}
-                          index={index}
-                          // delete={this.handleDelete.bind(this)}
-                        ></SingleItem>
+                        <Row justify="center">
+                          <SingleItem
+                            tag={"recipe"}
+                            infos={el}
+                            index={index}
+                            // delete={this.handleDelete.bind(this)}
+                          ></SingleItem>
+                        </Row>
                       ))
                     : null}
                 </TabPane>
                 <TabPane tab="PRODUCTS" key="2">
                   {this.props.favourite.products
                     ? this.props.favourite.products.map((el, index) => (
-                        <SingleItem
-                          tag={"product"}
-                          infos={el}
-                          index={index}
-                        ></SingleItem>
+                        <Row justify="center">
+                          <SingleItem
+                            tag={"product"}
+                            infos={el}
+                            index={index}
+                          ></SingleItem>
+                        </Row>
                       ))
                     : null}
                 </TabPane>
                 <TabPane tab="WINES" key="3">
                   {this.props.favourite.wines
                     ? this.props.favourite.wines.map((el, index) => (
-                        <SingleItem
-                          tag={"wine"}
-                          infos={el}
-                          index={index}
-                        ></SingleItem>
+                        <Row justify="center">
+                          <SingleItem
+                            tag={"wine"}
+                            infos={el}
+                            index={index}
+                          ></SingleItem>
+                        </Row>
                       ))
                     : null}
                 </TabPane>

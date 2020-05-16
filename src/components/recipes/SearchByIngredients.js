@@ -4,6 +4,14 @@ import { connect } from "react-redux";
 
 import { Row, Col, Button, Form, Input } from "antd";
 import style from "./SearchByNutrients.module.scss";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 const { Search } = Input;
 
 class SearchByNutrients extends Component {
@@ -62,27 +70,27 @@ class SearchByNutrients extends Component {
         console.log("payload", payload);
         this.props.addRecipeListSearch(payload);
         this.props.searchingRecipe(true);
+        scroll.scrollMore(200);
       });
   };
 
   render() {
     return (
-      <form>
+      <form style={{ padding: "20px" }}>
         <div className={style.inputContainer}>
           <input
             value={this.state.element}
-            style={{ width: "50%" }}
             onChange={this.handleChange}
           ></input>{" "}
           <Button className={style.customButton} onClick={this.handleAdd}>
             ADD
           </Button>
-        </div>
-        <div className={style.buttonsContainer}>
           <Button className={style.customButton} onClick={this.handleClear}>
             CLEAR
           </Button>
-          <Button className={style.customButton} onClick={this.handleSubmit}>
+        </div>
+        <div className={style.buttonsContainer}>
+          <Button className="ctaCustom" onClick={this.handleSubmit}>
             SUBMIT
           </Button>
         </div>

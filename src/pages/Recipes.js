@@ -7,6 +7,14 @@ import { connect } from "react-redux";
 import RecipeList from "../components/recipes/RecipeList";
 import Jumbotron from "../components/UI/Jumbotron";
 import axios from "axios";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 export const { Provider, Consumer } = React.createContext(null);
 
@@ -24,6 +32,7 @@ class Recipes extends Component {
         const payload = el.data.results;
         this.props.addRecipeListSearch(payload);
         this.props.searchingRecipe(true);
+        scroll.scrollTo(600);
       })
       .catch((err) => {
         console.log(err);

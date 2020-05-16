@@ -37,26 +37,37 @@ class RecipeWithWines extends Component {
           </Row>
           {this.props.wines.data.pairings ? (
             <>
-              <Divider></Divider>
-              <Row justify="center">
-                <Col>
-                  <h4>Search recipes with:</h4>
-                  <ul>
+              <Row
+                style={{
+                  backgroundColor: "#f3f9f9",
+                  paddingTop: "20px",
+                  paddingBottom: "20px",
+                }}
+              >
+                <Col sm={24}>
+                  <h4>
+                    Search recipes with:
                     {this.props.wines.data.pairings.map((el) => {
                       return (
-                        <li
+                        <span
                           className={style.listItem}
                           onClick={this.handleSearch}
                         >
                           {el}
-                        </li>
+                        </span>
                       );
                     })}
-                  </ul>
+                  </h4>
                 </Col>
               </Row>
-              <Row>
-                <Button onClick={this.handleFav}>ADD WINE</Button>
+              <Row justify="center">
+                <Button
+                  onClick={this.handleFav}
+                  className="customCta heartCta"
+                  style={{ marginTop: "30px" }}
+                >
+                  ADD TO FAV<span className="elementOut">O</span>URITE
+                </Button>
               </Row>
             </>
           ) : null}

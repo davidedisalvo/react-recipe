@@ -52,7 +52,9 @@ class SingleProduct extends Component {
           <div className={style.titleContainer}>
             <h4 className="title">{this.props.infos.title}</h4>
           </div>
-          <Button onClick={this.handleSingleProduct}>Go to the recipe</Button>
+          <Button className="ctaCustom" onClick={this.handleSingleProduct}>
+            Go to the product
+          </Button>
         </article>
       </Col>
     );

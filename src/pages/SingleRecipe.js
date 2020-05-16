@@ -4,6 +4,7 @@ import { Row, Col, Button, Divider } from "antd";
 import style from "./SingleRecipe.module.scss";
 import { BsArrowRight } from "react-icons/bs";
 import { Redirect } from "react-router-dom";
+import Split from "react-split";
 
 import ReactHtmlParser, {
   processNodes,
@@ -12,7 +13,7 @@ import ReactHtmlParser, {
 } from "react-html-parser";
 
 class SingleRecipe extends Component {
-  handleFavourite = () => {
+  handleFavourite = (e) => {
     this.props.addRecipesToFavourite(this.props.recipe);
   };
   render() {
@@ -24,7 +25,12 @@ class SingleRecipe extends Component {
             <Row justify="center">
               <h1>{this.props.recipe.title}</h1>
             </Row>
-            <Row align="middle" justify="center" gutter={50}>
+            <Row
+              align="middle"
+              justify="center"
+              className={style.rowRecipe}
+              gutter={50}
+            >
               <Col md={10}>
                 <div className={style.imgContainer}>
                   <img src={this.props.recipe.img} />
@@ -120,9 +126,14 @@ class SingleRecipe extends Component {
                 </Col>
               </Row>
             )}
-            <Row>
+            <Row justify="center" style={{ marginTop: "60px" }}>
               <Col>
-                <Button onClick={this.handleFavourite}>ADD TO FAVOURITE</Button>
+                <Button
+                  className="customCta heartCta"
+                  onClick={this.handleFavourite}
+                >
+                  ADD TO FAV<span className="elementOut">O</span>URITE
+                </Button>
               </Col>
             </Row>
           </section>
