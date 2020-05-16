@@ -28,7 +28,7 @@ class TheTabs extends Component {
             <Col span={24}>
               <Tabs type="card">
                 <TabPane tab="RECIPES" key="1">
-                  {this.props.favourite.recipes
+                  {this.props.favourite.recipes.length !== 0
                     ? this.props.favourite.recipes.map((el, index) => (
                         <Row justify="center">
                           <SingleItem
@@ -41,7 +41,7 @@ class TheTabs extends Component {
                     : null}
                 </TabPane>
                 <TabPane tab="PRODUCTS" key="2">
-                  {this.props.favourite.products ? (
+                  {this.props.favourite.products.length !== 0 ? (
                     this.props.favourite.products.map((el, index) => (
                       <Row justify="center">
                         <SingleItem
@@ -58,7 +58,7 @@ class TheTabs extends Component {
                   )}
                 </TabPane>
                 <TabPane tab="WINES" key="3">
-                  {this.props.favourite.wines ? (
+                  {this.props.favourite.wines.length !== 0 ? (
                     this.props.favourite.wines.map((el, index) => (
                       <Row justify="center">
                         <SingleItem
