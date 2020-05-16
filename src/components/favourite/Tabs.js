@@ -58,17 +58,21 @@ class TheTabs extends Component {
                   )}
                 </TabPane>
                 <TabPane tab="WINES" key="3">
-                  {this.props.favourite.wines
-                    ? this.props.favourite.wines.map((el, index) => (
-                        <Row justify="center">
-                          <SingleItem
-                            tag={"wine"}
-                            infos={el}
-                            index={index}
-                          ></SingleItem>
-                        </Row>
-                      ))
-                    : null}
+                  {this.props.favourite.wines ? (
+                    this.props.favourite.wines.map((el, index) => (
+                      <Row justify="center">
+                        <SingleItem
+                          tag={"wine"}
+                          infos={el}
+                          index={index}
+                        ></SingleItem>
+                      </Row>
+                    ))
+                  ) : (
+                    <h4 className="errorBar">
+                      You don't have any favourite wine, yet
+                    </h4>
+                  )}
                 </TabPane>
               </Tabs>
             </Col>
