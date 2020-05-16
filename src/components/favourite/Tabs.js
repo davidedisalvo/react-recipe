@@ -35,24 +35,27 @@ class TheTabs extends Component {
                             tag={"recipe"}
                             infos={el}
                             index={index}
-                            // delete={this.handleDelete.bind(this)}
                           ></SingleItem>
                         </Row>
                       ))
                     : null}
                 </TabPane>
                 <TabPane tab="PRODUCTS" key="2">
-                  {this.props.favourite.products
-                    ? this.props.favourite.products.map((el, index) => (
-                        <Row justify="center">
-                          <SingleItem
-                            tag={"product"}
-                            infos={el}
-                            index={index}
-                          ></SingleItem>
-                        </Row>
-                      ))
-                    : null}
+                  {this.props.favourite.products ? (
+                    this.props.favourite.products.map((el, index) => (
+                      <Row justify="center">
+                        <SingleItem
+                          tag={"product"}
+                          infos={el}
+                          index={index}
+                        ></SingleItem>
+                      </Row>
+                    ))
+                  ) : (
+                    <h4 className="errorBar">
+                      You don't have any favourite product, yet
+                    </h4>
+                  )}
                 </TabPane>
                 <TabPane tab="WINES" key="3">
                   {this.props.favourite.wines
