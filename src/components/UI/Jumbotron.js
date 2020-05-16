@@ -51,7 +51,7 @@ class Jumbotron extends Component {
             </Col>
           </Row>
         ) : null}
-        {this.props.minimize ? (
+        {this.props.minimize && this.props.class === "jumbotronRecipe" ? (
           <Row
             justify="center"
             style={{ position: "absolute", bottom: "20px", zIndex: 2 }}
