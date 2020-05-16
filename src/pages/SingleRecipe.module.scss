@@ -24,8 +24,9 @@ ul {
   }
 }
 .ingredientsContainer {
-  display: flex;
+  display: block;
   align-items: center;
+  flex-direction: column;
   h4 {
     text-align: left;
     margin-bottom: 0;
