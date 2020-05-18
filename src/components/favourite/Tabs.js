@@ -28,17 +28,23 @@ class TheTabs extends Component {
             <Col span={24}>
               <Tabs type="card">
                 <TabPane tab="RECIPES" key="1">
-                  {this.props.favourite.recipes.length !== 0
-                    ? this.props.favourite.recipes.map((el, index) => (
-                        <Row justify="center">
-                          <SingleItem
-                            tag={"recipe"}
-                            infos={el}
-                            index={index}
-                          ></SingleItem>
-                        </Row>
-                      ))
-                    : null}
+                  {this.props.favourite.recipes.length !== 0 ? (
+                    this.props.favourite.recipes.map((el, index) => (
+                      <Row justify="center">
+                        <SingleItem
+                          tag={"recipe"}
+                          infos={el}
+                          index={index}
+                        ></SingleItem>
+                      </Row>
+                    ))
+                  ) : (
+                    <Row justify="center" className="fullHeight">
+                      <Col>
+                        <h4>you don t have any favourite item yet</h4>
+                      </Col>
+                    </Row>
+                  )}
                 </TabPane>
                 <TabPane tab="PRODUCTS" key="2">
                   {this.props.favourite.products.length !== 0 ? (
