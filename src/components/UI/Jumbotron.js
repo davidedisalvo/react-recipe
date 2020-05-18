@@ -5,6 +5,14 @@ import SimpleSearch from "./SimpleSearch";
 import axios from "axios";
 import { connect } from "react-redux";
 import { BsChevronDoubleDown } from "react-icons/bs";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 class Jumbotron extends Component {
   handleSearch = (value) => {
@@ -26,6 +34,9 @@ class Jumbotron extends Component {
         this.props.errRecipeList(true);
       });
   };
+  scrollDown = () => {
+    scroll.scrollTo(700);
+  };
   render() {
     return (
       <section
@@ -44,7 +55,10 @@ class Jumbotron extends Component {
             <Col md={24} lg={18} className={style.column}>
               <div className={style.flex}>
                 <div className={style.iconCustom}>
-                  <BsChevronDoubleDown />
+                  <BsChevronDoubleDown
+                    onClick={() => scroll.scrollTo(700)}
+                    style={{ cursor: "pointer" }}
+                  />
                 </div>
                 <h3>Scroll to search by nutrients or ingredients</h3>
               </div>

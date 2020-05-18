@@ -1,6 +1,8 @@
 @import "./variable";
 html {
+  font-size: responsive 18px 18px !important;
   line-height: var(--lh);
+  font-size: responsive;
 }
 body {
   margin: 0;
@@ -8,12 +10,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $textColor;
+  font-size: 16px;
+
   a {
     font-family: "Josefin Sans", sans-serif;
   }
-  @media (max-width: 400px) {
-    font-size: 14px;
-  }
+  // @media (max-width: 400px) {
+  //   font-size: 14px;
+  // }
 }
 
 code {

@@ -2,6 +2,14 @@ import React from "react";
 import { Row, Col, Button } from "antd";
 import style from "./Header.module.scss";
 import { BsChevronDoubleDown } from "react-icons/bs";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 function Header() {
   return (
@@ -24,7 +32,10 @@ function Header() {
         <Col md={24} lg={10} className={style.column}>
           <div className={style.flex}>
             <div className={style.iconCustom}>
-              <BsChevronDoubleDown />
+              <BsChevronDoubleDown
+                onClick={() => scroll.scrollTo(400)}
+                style={{ cursor: "pointer" }}
+              />{" "}
             </div>
             <h3>Scroll to see some Recipes</h3>
           </div>

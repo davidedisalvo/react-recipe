@@ -56,9 +56,15 @@ class SingleRecipe extends Component {
               style={{ color: "#333", fontWeight: "normal", margin: "44px 0" }}
             ></Divider>
             <Row justify="center">
-              <Col span={10}>
+              <Col sm={24} lg={10}>
                 <div>
-                  <ul>
+                  <ul
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      justifyContent: "center",
+                    }}
+                  >
                     <li>
                       <span>Dairyfree:&nbsp;</span>
                       {this.props.recipe.tags.dairyFree ? "Yes" : "No"}

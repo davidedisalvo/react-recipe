@@ -15,6 +15,7 @@ import {
   scrollSpy,
   scroller,
 } from "react-scroll";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 export const { Provider, Consumer } = React.createContext(null);
 
